@@ -3,7 +3,7 @@ using UnityEditor.AI;
 using UnityEngine.AI;
 using System.IO;
 
-public class ST_EnemyAI : MonoBehaviour
+public class S_EnemyAI : MonoBehaviour
 {
 
     public enum State { Patrol, Chase }
