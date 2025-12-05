@@ -1,16 +1,26 @@
 using UnityEngine;
+using UnityEditor.AI;
+using UnityEngine.AI;
 
 public class ST_EnemyAI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public NavMeshAgent agent;
+    public Transform playerTarget;
     void Start()
     {
-        
+        //Gets the NavMesh Agent of the Enemy
+        if (agent == null)
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        //Moves towards the player postion
+        if (playerTarget != null)
+        {
+            agent.SetDestination(playerTarget.position);
+        }
     }
 }
